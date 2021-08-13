@@ -1,0 +1,144 @@
+1.What is sql injection, how to resolve the same in java.
+Ans:sql injection is a code technique that might cause loss to our database.sql injection can be used to manipulate the application web server by malicious users.
+sql injection generally occurs when we ask a user to input their username/userid.we can resolve by proper input validation.
+a.valid input
+b.prepare a query
+c.create the prepared statement
+d.pass the parameter to the prepared statement
+e.execute your query
+f.validate your application
+
+
+2.what is the exception hierarchy.
+Ans:In Java an event that occurs during the execution of a program that disrupts the normal flow of instruction is called an exception.
+The class at the top of the exception class hierarchy is the Throwable class, which is a direct subclass of the Object class. 
+Throwable has two direct subclasses-exception and error.  
+the root class for all the exception in the hierarchy of exception  class is java.lang.Trowable
+
+
+3.how will you decide to choose between inferface and abstract?
+use an abstract class if you have some funtionality that you want its subclass to have.for instance,if you have a set of functions that you want all of the base abstract class subclasses to have.
+use an interface if want a general contract on behavior/functionality.
+
+
+4.what is the difference between == and equals?
+Ans:== checks if both object point to the same memory location
+equals() evaluate to the comparision of values in the object.
+
+
+5.what is the difference between throw and throws?
+Ans:Throw: java throw keyword is used to explicitly throw exception.
+throw is followed by an instance.
+throw is used with in a method.
+you cannot throw an multiple exception.
+Throws: java throws keyword is used to declare an exception.
+Throws is followed by java.
+Throws is used with in the method signature.
+you can declare multiple exceptions
+eg:public void method()throws
+IOException, SQLException.
+
+example of throw:
+
+public class TestThrow {  
+    
+    public static void checkNum(int num) {  
+        if (num < 1) {  
+            throw new ArithmeticException("\nNumber is negative, cannot calculate square");  
+        }  
+        else {  
+            System.out.println("Square of " + num + " is " + (num*num));  
+        }  
+    }  
+    
+    public static void main(String[] args) {  
+            TestThrow obj = new TestThrow();  
+            obj.checkNum(-3);  
+            System.out.println("Rest of the code..");  
+    }  
+}  
+
+
+example of throws:
+
+public class TestThrows {  
+    
+    public static int divideNum(int m, int n) throws ArithmeticException {  
+        int div = m / n;  
+        return div;  
+    }  
+   
+    public static void main(String[] args) {  
+        TestThrows obj = new TestThrows();  
+        try {  
+            System.out.println(obj.divideNum(45, 0));  
+        }  
+        catch (ArithmeticException e){  
+            System.out.println("\nNumber cannot be divided by 0");  
+        }  
+          
+        System.out.println("Rest of the code..");  
+    }  
+} 
+
+  
+ 6.what is the use of the toString method?
+Ans:thetostring method returns a string it is representation of object in java.
+by default the tostring method returns the name of the object class its hash code
+Example:
+public class TestToString
+
+{
+
+public static void main(String[] args)
+
+{
+
+Employee emp = new Employee(“Martinez”,
+
+“Anthony”);
+
+System.out.println(emp.toString());
+
+}
+
+}
+
+class Employee
+
+{
+
+private String lastName;
+
+private String firstName;
+
+public Employee(String lastName, String firstName)
+
+{
+
+this.lastName = lastName;
+
+this.firstName = firstName;
+
+}
+
+}
+7.what is immutable in java?
+ANS: immutable means once an object is created,we cannot change its content.in java all wrapper classes and string class is immutable.
+         example:string is an immutable class and once instantiated its value never changes.
+
+
+
+8.what fails fast in collections mean,how can ve resolve it?
+Ans  fail fast iterators checks the modCount flag whenever it gets the next value,and if it finds that the modcount
+ has been modified after this iterator has been created,it throws concurrentmodificationexception.
+
+9.what is the benifit of string tokenizer?
+Ans:The string tokenzier class allow an application to break a string into tokens.the string tokenizer method do not distinquish among identifiers,numbers.
+
+10.How are string,string buffer and string builder different from each other?
+Ans:strings in java are objects that are backed internally by char array,strings are immutable.
+stringBuffer:String buffer is less efficient than string builder
+stringBuilder: stringbuilder is more efficient than stringbuffer
+
+  
